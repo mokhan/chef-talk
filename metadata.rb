@@ -1,6 +1,6 @@
 name             'chef-talk'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'mo'
+maintainer_email 'mokha@cisco.com'
 license          'All rights reserved'
 description      'Installs/Configures chef-talk'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))

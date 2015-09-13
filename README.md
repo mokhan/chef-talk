@@ -1,45 +1,21 @@
 chef-talk Cookbook
 ==================
-TODO: Enter the cookbook description here.
+This cookbook creates provisions a server and preps it for deploying a
+rails application to it.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
-#### packages
-- `toaster` - chef-talk needs toaster to brown your bagel.
+Works on my box.
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
-
-e.g.
-#### chef-talk::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['chef-talk']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+View the attributes/default.rb
 
 Usage
 -----
 #### chef-talk::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
 Just include `chef-talk` in your node's `run_list`:
 
 ```json
