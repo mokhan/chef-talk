@@ -2,15 +2,20 @@ require 'spec_helper'
 
 describe "chef-talk::nginx" do
   subject do
-    ChefSpec::SoloRunner.new.converge(described_recipe)
+    ChefSpec::SoloRunner.new do |node|
+      node.set['chef-talk']['domain_name'] = domain
+    end.converge(described_recipe)
   end
+  let(:domain) { "www.blah#{rand(10)}.com" }
 
   it 'installs the nginx package' do
+    expect(subject).to install_package("epel-release")
     expect(subject).to install_package("nginx")
   end
 
   it 'adds the configuration for our rails site' do
-    expect(subject).to create_template("/etc/nginx/sites-available/nginx.conf")
+    expect(subject).to create_template("/etc/nginx/conf.d/nginx.conf")
+      .with(variables: { domain_name: domain })
   end
 
   it 'starts nginx' do
