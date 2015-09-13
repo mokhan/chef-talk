@@ -1,8 +1,3 @@
-#
-# Cookbook Name:: chef-talk
-# Recipe:: default
-#
-# Copyright 2015, YOUR_COMPANY_NAME
-#
-# All rights reserved - Do Not Redistribute
-#
+include_recipe "chef-talk::ruby"
+include_recipe "chef-talk::nginx"
+include_recipe "chef-talk::puma"
