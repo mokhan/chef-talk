@@ -1,0 +1,9 @@
+DEPENDENCIES
+  chef-talk
+    path: .
+    metadata: true
+
+GRAPH
+  chef-talk (0.1.0)
+    ruby_build (>= 0.0.0)
+  ruby_build (0.8.0)
