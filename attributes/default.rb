@@ -1,7 +1,7 @@
-node.default['chef-talk']['domain_name'] = 'www.example.com'
-node.default['chef-talk']['ruby_version'] = '2.2.3'
+default['chef-talk']['domain_name'] = 'www.example.com'
+default['chef-talk']['ruby_version'] = '2.2.3'
 
-node.default['chef-talk']['packages'] = %w{
+default['chef-talk']['packages'] = %w{
   autoconf
   automake
   bison
