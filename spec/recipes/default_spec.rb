@@ -13,7 +13,7 @@ describe "chef-talk::default" do
     expect(subject).to include_recipe('chef-talk::nginx')
   end
 
-  it 'installs puma' do
-    expect(subject).to include_recipe('chef-talk::puma')
+  it 'installs foreman' do
+    expect(subject).to include_recipe('chef-talk::foreman')
   end
 end

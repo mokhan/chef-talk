@@ -6,4 +6,8 @@ DEPENDENCIES
 GRAPH
   chef-talk (0.1.0)
     ruby_build (>= 0.0.0)
+    runit (>= 0.0.0)
+  packagecloud (0.1.0)
   ruby_build (0.8.0)
+  runit (1.7.2)
+    packagecloud (>= 0.0.0)

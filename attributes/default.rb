@@ -21,3 +21,5 @@ default['chef-talk']['packages'] = %w{
   zlib
   zlib-devel
 }
+
+default['chef-talk']['env']['RAILS_ENV'] = 'production'
