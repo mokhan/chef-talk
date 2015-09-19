@@ -5,18 +5,19 @@ directory working_dir do
   recursive true
 end
 
-bash "install_rack" do
+cookbook_file "#{working_dir}/config.ru"
+cookbook_file "#{working_dir}/Procfile"
+
+bash "install_foreman" do
   code <<-EOH
     source /etc/profile.d/ruby.sh
-    gem install rack --no-ri --no-rdoc
+    gem install rack foreman --no-ri --no-rdoc
   EOH
 end
 
-cookbook_file "#{working_dir}/config.ru"
-
 include_recipe "runit" # same as runit::default
 
-runit_service "rackup" do
+runit_service "foreman" do
   action [:enable, :start]
   default_logger true
   env node['chef-talk']['env']

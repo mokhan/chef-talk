@@ -1,6 +1,6 @@
 #!/bin/sh
 exec 2>&1
 source /etc/profile.d/ruby.sh
-cwd=$(pwd)
+envdir=$(pwd)/env
 cd <%= "/var/www/#{node['chef-talk']['domain_name']}" %>
-exec envdir $cwd/env rackup
+exec chpst -e $envdir foreman start
