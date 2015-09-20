@@ -4,5 +4,4 @@ require 'kitchen/rake_tasks'
 RSpec::Core::RakeTask.new(:spec)
 Kitchen::RakeTasks.new
 
-task default: [:spec]
-task all: [:default, 'kitchen:all']
+task default: [:spec, 'kitchen:all']
