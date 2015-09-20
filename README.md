@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mokhan/chef-talk.svg?branch=master)](https://travis-ci.org/mokhan/chef-talk)
+
 chef-talk Cookbook
 ==================
 This cookbook creates provisions a server and preps it for deploying a
