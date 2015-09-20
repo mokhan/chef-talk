@@ -4,7 +4,7 @@
 #- attributes
 #- action
 
-package "epel-release"
+package "epel-release" if redhat?
 package "nginx"
 
 template "/etc/nginx/nginx.conf" do
