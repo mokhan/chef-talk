@@ -1,18 +1,20 @@
-include_recipe "ruby_build"
+git "/usr/local/rbenv" do
+  repository "https://github.com/sstephenson/rbenv.git"
+  action :sync
+end
 
-package node['chef-talk']['packages']
+cookbook_file "/etc/profile.d/rbenv.sh"
+directory "/usr/local/rbenv/plugins"
+
+git "/usr/local/rbenv/plugins/ruby-build" do
+  repository "https://github.com/sstephenson/ruby-build.git"
+  action :sync
+end
 
 ruby_version = node["chef-talk"]["ruby_version"]
-
-ruby_build_ruby ruby_version do
-  action :install
+chef_talk_rbenv "install #{ruby_version}" do
+  not_if { ::File.exist?("/usr/local/rbenv/versions/#{ruby_version}") }
 end
+rbenv "global #{ruby_version}"
 
-template "/etc/profile.d/ruby.sh"
-
-bash "install_bundler" do
-  code <<-EOH
-    source /etc/profile.d/ruby.sh
-    gem install bundler --no-ri --no-rdoc
-  EOH
-end
+gem "bundler"

@@ -17,7 +17,6 @@
 #
 require 'chefspec'
 require 'chefspec/berkshelf'
-require_relative 'support/matchers'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|

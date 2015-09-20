@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "chef-talk::nginx" do
   subject do
     ChefSpec::SoloRunner.new do |node|
-      node.set['chef-talk']['domain_name'] = domain
+      node.set['chef-talk']['application_name'] = domain
     end.converge(described_recipe)
   end
   let(:domain) { "www.blah#{rand(10)}.com" }
@@ -14,8 +14,8 @@ describe "chef-talk::nginx" do
   end
 
   it 'adds the configuration for our rails site' do
-    expect(subject).to create_template("/etc/nginx/conf.d/nginx.conf")
-      .with(variables: { domain_name: domain })
+    expect(subject).to create_template("/etc/nginx/nginx.conf")
+      .with(variables: { application_name: domain })
   end
 
   it 'starts nginx' do

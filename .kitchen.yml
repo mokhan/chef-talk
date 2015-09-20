@@ -1,3 +1,4 @@
+#<% require 'kitchen-sync' %>
 ---
 driver:
   name: vagrant
@@ -14,3 +15,6 @@ suites:
     run_list:
       - recipe[chef-talk::default]
     attributes:
+
+transport:
+  name: sftp

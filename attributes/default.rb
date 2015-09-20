@@ -1,4 +1,4 @@
-default['chef-talk']['domain_name'] = 'www.example.com'
+default['chef-talk']['application_name'] = 'www.example.com'
 default['chef-talk']['ruby_version'] = '2.2.3'
 
 default['chef-talk']['packages'] = %w{
@@ -7,6 +7,7 @@ default['chef-talk']['packages'] = %w{
   bison
   bzip2
   gcc-c++
+  git
   libffi-devel
   libtool
   libxml2
