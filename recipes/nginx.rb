@@ -7,6 +7,8 @@
 package "epel-release" if redhat?
 package "nginx"
 
+user "nginx"
+
 template "/etc/nginx/nginx.conf" do
   action :create
   variables(application_name: node['chef-talk']['application_name'])

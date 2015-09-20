@@ -24,6 +24,10 @@ describe "chef-talk::nginx" do
     expect(subject).to enable_service("nginx")
   end
 
+  it 'creates the nginx user' do
+    expect(subject).to create_user("nginx")
+  end
+
   context "centos" do
     let(:configuration) { { platform: 'centos', version: '6.6' } }
 
