@@ -8,9 +8,8 @@ env:
 - TEST_SUITE='kitchen:all'
 before_install:
 - openssl aes-256-cbc -K $encrypted_fc652662b082_key -iv $encrypted_fc652662b082_iv -in travis-ci.pem.enc -out travis-ci.pem -d
-- bundle install --jobs 3
-- bundle exec berks install
 before_script:
+- bundle exec berks install
 - cp .kitchen.ci.yml .kitchen.local.yml
 script: "bundle exec rake $TEST_SUITE"
 after_script:
