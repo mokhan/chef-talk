@@ -2,14 +2,18 @@ language: ruby
 cache: bundler
 sudo: false
 rvm:
-  - 2.2.3
+- 2.2.3
+env:
+- EC2_SSH_KEY_PATH:travis-ci.pem
+before_install:
+- openssl aes-256-cbc -K $encrypted_fc652662b082_key -iv $encrypted_fc652662b082_iv -in travis-ci.pem.enc -out travis-ci.pem -d
 install:
-  - bundle install
-  - bundle exec berks install
+- bundle install
+- bundle exec berks install
 before_script:
-  - cp .kitchen.ci.yml .kitchen.local.yml
+- cp .kitchen.ci.yml .kitchen.local.yml
 script:
-  - bundle exec rspec
-  - bundle exec kitchen test
+- bundle exec rspec
+- bundle exec kitchen test
 after_script:
-  - bundle exec kitchen destroy
+- bundle exec kitchen destroy
