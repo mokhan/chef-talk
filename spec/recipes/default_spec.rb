@@ -16,4 +16,8 @@ describe "chef-talk::default" do
   it 'installs foreman' do
     expect(subject).to include_recipe('chef-talk::foreman')
   end
+
+  it 'installs ntpd' do
+    expect(subject).to include_recipe('chef-talk::ntpd')
+  end
 end
