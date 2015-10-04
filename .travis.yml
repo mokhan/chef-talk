@@ -11,6 +11,6 @@ before_install:
 before_script:
 - bundle exec berks install
 - cp .kitchen.ci.yml .kitchen.local.yml
-script: "bundle exec rake $TEST_SUITE"
+script: travis_wait bundle exec rake $TEST_SUITE
 after_script:
 - bundle exec kitchen destroy
