@@ -1,0 +1,14 @@
+---
+driver:
+  name: ec2
+  aws_access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  aws_secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  aws_ssh_key_id: <%= ENV['AWS_KEYPAIR_NAME'] %>
+  security_group_ids: ["travis-ci"]
+  instance_type: t1.micro
+
+platforms:
+  - name: centos-6.4
+
+transport:
+  ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>

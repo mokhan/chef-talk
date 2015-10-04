@@ -2,32 +2,12 @@
 
 chef-talk Cookbook
 ==================
-This cookbook creates provisions a server and preps it for deploying a
-rails application to it.
 
+This cookbook is a demo cookbook created for a talk given at YYC Ruby.
 
-Requirements
-------------
-
-Works on my box.
-
-Attributes
-----------
-View the attributes/default.rb
-
-Usage
------
-#### chef-talk::default
-Just include `chef-talk` in your node's `run_list`:
-
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[chef-talk]"
-  ]
-}
-```
+It provides examples of running chefspec, and test kitchen. It creates a
+couple of custom lightweight resource provides, and demonstrates how to
+manage cookbook dependencies.
 
 Contributing
 ------------

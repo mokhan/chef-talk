@@ -1,18 +1,13 @@
 language: ruby
 cache: bundler
-sudo: true
+sudo: false
 rvm:
   - 2.2.3
 install:
-  - sudo apt-get update -q
-  - sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian '$(lsb_release -cs)' contrib non-free' > /etc/apt/sources.list.d/virtualbox.list" && wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install virtualbox-5.0
-  - sudo apt-get install linux-headers-2.6.32-042stab105.14
-  - sudo VBoxManage --version
-  - sudo /etc/init.d/vboxdrv setup
-  - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb
-  - sudo dpkg -i vagrant_1.7.4_x86_64.deb
   - bundle install
   - bundle exec berks install
+before_script:
+  - cp .kitchen.ci.yml .kitchen.local.yml
 script:
   - bundle exec rspec
   - kitchen test
