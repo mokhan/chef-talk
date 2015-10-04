@@ -19,10 +19,6 @@ describe "chef-talk::default" do
     expect(subject).to include_recipe('chef-talk::foreman')
   end
 
-  it 'installs ntpd' do
-    expect(subject).to include_recipe('chef-talk::ntpd')
-  end
-
   context 'centos' do
     let(:configuration) { { platform: 'centos', version: '6.6' } }
 
