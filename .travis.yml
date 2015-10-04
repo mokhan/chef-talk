@@ -4,7 +4,6 @@ sudo: false
 rvm:
 - 2.2.3
 env:
-- EC2_SSH_KEY_PATH=$TRAVIS_BUILD_DIR/travis-ci.pem
 - TEST_SUITE=spec
 - TEST_SUITE='kitchen:all'
 before_install:
