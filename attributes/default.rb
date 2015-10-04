@@ -7,6 +7,7 @@ if node.platform_family == "rhel"
     automake
     bison
     bzip2
+    ca-certificates
     gcc-c++
     git
     libffi-devel

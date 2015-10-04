@@ -1,10 +1,8 @@
-#resource
-#- type
-#- name
-#- attributes
-#- action
+if redhat?
+  execute "yum upgrade -y ca-certificates"
+  package "epel-release"
+end
 
-package "epel-release" if redhat?
 package "nginx"
 
 user "nginx"
