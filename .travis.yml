@@ -4,13 +4,13 @@ sudo: false
 rvm:
 - 2.2.3
 env:
-- TEST_SUITE=spec
-- TEST_SUITE='kitchen:all'
+- TEST_SUITE=rspec
+- TEST_SUITE='kitchen test -l debug'
 before_install:
 - openssl aes-256-cbc -K $encrypted_fc652662b082_key -iv $encrypted_fc652662b082_iv -in travis-ci.pem.enc -out travis-ci.pem -d
 before_script:
 - bundle exec berks install
 - cp .kitchen.ci.yml .kitchen.local.yml
-script: travis_wait bundle exec rake $TEST_SUITE
+script: travis_wait bundle exec $TEST_SUITE
 after_script:
 - bundle exec kitchen destroy
