@@ -8,7 +8,6 @@ env:
 - TEST_SUITE='kitchen:all'
 before_install:
 - openssl aes-256-cbc -K $encrypted_fc652662b082_key -iv $encrypted_fc652662b082_iv -in travis-ci.pem.enc -out travis-ci.pem -d
-install:
 - bundle install --jobs 3
 - bundle exec berks install
 before_script:
