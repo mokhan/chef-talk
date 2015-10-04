@@ -10,4 +10,6 @@ before_script:
   - cp .kitchen.ci.yml .kitchen.local.yml
 script:
   - bundle exec rspec
-  - kitchen test
+  - bundle exec kitchen test
+after_script:
+  - bundle exec kitchen destroy
