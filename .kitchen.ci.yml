@@ -11,3 +11,5 @@ platforms:
 
 transport:
   ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
+  connection_timeout: 30
+  connection_retries: 10
