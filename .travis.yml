@@ -5,7 +5,8 @@ rvm:
 - 2.2.3
 env:
 - TEST_SUITE=rspec
-- TEST_SUITE='rake kitchen:all'
+- TEST_SUITE='rake kitchen:default-centos-64'
+- TEST_SUITE='rake kitchen:default-ubuntu-1404'
 before_install:
 - openssl aes-256-cbc -K $encrypted_fc652662b082_key -iv $encrypted_fc652662b082_iv -in travis-ci.pem.enc -out travis-ci.pem -d
 before_script:

@@ -9,6 +9,9 @@ driver:
 
 platforms:
   - name: centos-6.4
+  - name: ubuntu-14.04
+    driver:
+      image_id: ami-d85e75b0
 
 transport:
   ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
